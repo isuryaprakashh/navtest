@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0rem;
+            font-family: 'Poppins';
+
+        }
+        header{
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+           
+            padding:1rem;
+            box-shadow:1px 1px 5px rgb(244, 245, 175);
+            background-color: rgba(255, 255, 255, 0.7);
+            
+            margin: 0;
+           
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            
+        }
+       .nav-logo img{
+        height: 1.3rem;
+
+       }
+       .navbar{
+        display: flex;
+        gap: 1rem;
+       }
+       .navbar a{
+        text-decoration: none;
+        color:grey;
+      
+       }
+        .navbar a:hover {
+            color: black;
+        }
+        
+        .hero{
+            background-color: rgb(175, 245, 200);
+            height: 1000vh;
+            text-align: center;
+        }
+        .sidebar{
+            position: fixed;
+            background-color: rgba(255, 255, 255, 0.2);
+            top:0px;
+            right:0;
+            height: 100vh;
+            width: 15rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap:1rem;
+
+    
+            
+        }
+        .sidebar img{
+            height: 1.3rem;
+        }
+        .sidebar a{
+            text-decoration: none;
+            color:grey;
+        }
+        @media(max-width:800px){
+            .hideOnMobile{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="nav-logo">
+            <img src="https://imgs.search.brave.com/KpHiNtk3hwZ-QRE5cnSKbX3VJo53v6Z5Y9waE7dDed4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9j/L2M2L0Nocm9tZS1j/YW5hcnktbG9nby5z/dmc" alt="">
+        </div>
+        <div class="navbar">
+            <li class="hideOnMobile"><a href="">Features</a></li>
+            <li class="hideOnMobile"> <a href="">Pricing</a></li>
+            <li class="hideOnMobile"> <a href="">Roadmap</a></li>
+            <li class="hideOnMobile"><a href="">Editor</a></li>
+            <li class="hideOnMobile"><a href="">Add to Chrome</a></li>
+            <li onclick="showSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+        </div>
+        <div class="sidebar">
+           <li onclick="closeSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li> 
+            <a href="">Features</a>
+            <a href="">Pricing</a>
+            <a href="">Roadmap</a>
+            <a href="">Editor</a>
+            <a href="">Add to Chrome</a>
+        </div>
+        </nav>
+    </header>
+    <div class="hero">
+        hero section
+    </div>
+
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display='flex'
+        }
+        
+        closeSidebar = () => {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display='none';
+        }
+    </script>
+</body>
+</html>
