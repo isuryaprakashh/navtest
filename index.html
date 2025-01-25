@@ -29,11 +29,12 @@
         }
         nav{
             display: flex;
-            justify-content: center;
+            justify-content:center;
             gap: 2rem;
             list-style: none;
             
         }
+        
        .nav-logo img{
         height: 1.3rem;
 
@@ -58,11 +59,11 @@
         }
         .sidebar{
             position: fixed;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 1);
             top:0px;
             right:0;
             height: 100vh;
-            width: 15rem;
+            width: 100%;
             display: none;
             flex-direction: column;
             align-items: center;
@@ -72,6 +73,7 @@
     
             
         }
+        
         .sidebar img{
             height: 1.3rem;
         }
@@ -79,11 +81,23 @@
             text-decoration: none;
             color:grey;
         }
+        .sidebar a:hover{
+            color: black;
+        }
+        .menu-button{
+            display: none;
+        }
         @media(max-width:800px){
             .hideOnMobile{
                 display: none;
+
             }
+            .menu-button{
+                display: block;
+            }
+            
         }
+
     </style>
 </head>
 <body>
@@ -98,7 +112,7 @@
             <li class="hideOnMobile"> <a href="">Roadmap</a></li>
             <li class="hideOnMobile"><a href="">Editor</a></li>
             <li class="hideOnMobile"><a href="">Add to Chrome</a></li>
-            <li onclick="showSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+            <li class="menu-button" onclick="showSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
         </div>
         <div class="sidebar">
            <li onclick="closeSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li> 
